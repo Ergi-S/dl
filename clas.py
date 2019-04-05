@@ -31,7 +31,7 @@ dataiter = iter(trainloader)
 images, labels = dataiter.next()
 
 # show images
-imshow(torchvision.utils.make_grid(images))
+# imshow(torchvision.utils.make_grid(images))
 # print labels
 print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 
@@ -75,7 +75,7 @@ optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 #############                Train the network                  #######################
 #######################################################################################
 
-for epoch in range(1):  # loop over the dataset multiple times
+for epoch in range(2):  # loop over the dataset multiple times
 
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
@@ -93,11 +93,11 @@ for epoch in range(1):  # loop over the dataset multiple times
         optimizer.step()
 
         # print statistics
-        running_loss += loss.item()
-        if i % 2000 == 1999:    # print every 2000 mini-batches
-            print('[%d, %5d] loss: %.3f' %
-                  (epoch + 1, i + 1, running_loss / 2000))
-            running_loss = 0.0
+        #running_loss += loss.item()
+        #if i % 2000 == 1999:    # print every 2000 mini-batches
+            #print('[%d, %5d] loss: %.3f' %
+                  #(epoch + 1, i + 1, running_loss / 2000))
+            #running_loss = 0.0
 
 print('Finished Training')
 
