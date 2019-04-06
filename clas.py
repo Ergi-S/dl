@@ -11,7 +11,7 @@ print(device)
 # Load data
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=2)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=16, shuffle=True, num_workers=2)
 testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=False, num_workers=2)
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
@@ -53,7 +53,7 @@ class Net(nn.Module):
         self.pool = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(12, 32, 5, padding=1)
         self.fc1 = nn.Linear(32 * 6 * 6, 120)
-        self.do = nn.Dropout()
+        self.do = nn.Dropout(p=0.2)
         self.fc2 = nn.Linear(120, 84)
         self.fc3 = nn.Linear(84, 10)
 
@@ -72,22 +72,21 @@ class Net(nn.Module):
 net = Net()
 net = net.to(device)
 
-# Loss and SGD optimizer
-import torch.optim as optim
-
-criterion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
-
-
 #######################################################################################
 #############                Train the network                  #######################
 #######################################################################################
 import time
 start = time.time()
-nb_epoch = 2
+
+# Loss and SGD optimizer
+import torch.optim as optim
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
+nb_epoch = 8
+scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[nb_epoch/2, nb_epoch*3/4], gamma=0.1)
 
 for epoch in range(nb_epoch):  # loop over the dataset multiple times
-
+    scheduler.step()
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         # get the inputs
@@ -103,12 +102,14 @@ for epoch in range(nb_epoch):  # loop over the dataset multiple times
         loss.backward()
         optimizer.step()
 
+        '''
         # print statistics
         running_loss += loss.item()
         if i % 500 == 499:    # print every 2000 mini-batches
             print('[%d, %5d] loss: %.3f' %
                   (epoch + 1, i + 1, running_loss / 2000))
             running_loss = 0.0
+        '''
 
 print('Finished Training. epochs = %d' % nb_epoch)
 end = time.time()
