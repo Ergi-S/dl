@@ -81,12 +81,12 @@ start = time.time()
 # Loss and SGD optimizer
 import torch.optim as optim
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9)
-nb_epoch = 8
-scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[nb_epoch/2, nb_epoch*3/4], gamma=0.1)
+optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
+nb_epoch = 300
+#scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=[nb_epoch/2, nb_epoch*3/4], gamma=0.1)
 
 for epoch in range(nb_epoch):  # loop over the dataset multiple times
-    scheduler.step()
+    #scheduler.step()
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         # get the inputs

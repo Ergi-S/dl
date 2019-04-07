@@ -1,17 +1,97 @@
 cuda:0
 Files already downloaded and verified
 Files already downloaded and verified
-Finished Training. epochs = 8
-Total time = 1.438 min. 	 Epoch time = 0.180 min
-Accuracy of the network on the 10000 test images: 67 %
-Accuracy of plane : 72 %
+Finished Training. epochs = 300
+Total time = 57.152 min. 	 Epoch time = 0.191 min
+Accuracy of the network on the 10000 test images: 10 %
+Accuracy of plane :  0 %
+Accuracy of   car : 100 %
+Accuracy of  bird :  0 %
+Accuracy of   cat :  0 %
+Accuracy of  deer :  0 %
+Accuracy of   dog :  0 %
+Accuracy of  frog :  0 %
+Accuracy of horse :  0 %
+Accuracy of  ship :  0 %
+Accuracy of truck :  0 %
+End! Total time = 57.294 min
+
+======= lr variable 0.001 pour 50%, 0.0001 pour 25% et 0.00001 pour 25% ======= 
+cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+Finished Training. epochs = 300
+Total time = 54.546 min. 	 Epoch time = 0.182 min
+Accuracy of the network on the 10000 test images: 66 %
+Accuracy of plane : 74 %
+Accuracy of   car : 79 %
+Accuracy of  bird : 57 %
+Accuracy of   cat : 43 %
+Accuracy of  deer : 58 %
+Accuracy of   dog : 54 %
+Accuracy of  frog : 75 %
+Accuracy of horse : 72 %
+Accuracy of  ship : 78 %
+Accuracy of truck : 75 %
+End! Total time = 54.691 min
+
+======= lr static 0.001 tout au long ========
+cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+Finished Training. epochs = 300
+Total time = 56.122 min. 	 Epoch time = 0.187 min
+Accuracy of the network on the 10000 test images: 64 %
+Accuracy of plane : 65 %
+Accuracy of   car : 74 %
+Accuracy of  bird : 59 %
+Accuracy of   cat : 41 %
+Accuracy of  deer : 55 %
+Accuracy of   dog : 51 %
+Accuracy of  frog : 76 %
+Accuracy of horse : 67 %
+Accuracy of  ship : 79 %
+Accuracy of truck : 72 %
+End! Total time = 56.277 min
+Finished Training. epochs = 300
+Total time = 55.731 min. 	 Epoch time = 0.186 min
+Accuracy of the network on the 10000 test images: 64 %
+Accuracy of plane : 69 %
+Accuracy of   car : 77 %
+Accuracy of  bird : 52 %
+Accuracy of   cat : 43 %
+Accuracy of  deer : 54 %
+Accuracy of   dog : 53 %
+Accuracy of  frog : 74 %
+Accuracy of horse : 64 %
+Accuracy of  ship : 79 %
+Accuracy of truck : 72 %
+End! Total time = 55.876 min
+Finished Training. epochs = 300
+Total time = 55.153 min. 	 Epoch time = 0.184 min
+Accuracy of the network on the 10000 test images: 65 %
+Accuracy of plane : 71 %
 Accuracy of   car : 79 %
 Accuracy of  bird : 51 %
-Accuracy of   cat : 47 %
-Accuracy of  deer : 64 %
-Accuracy of   dog : 55 %
+Accuracy of   cat : 48 %
+Accuracy of  deer : 50 %
+Accuracy of   dog : 54 %
 Accuracy of  frog : 77 %
 Accuracy of horse : 71 %
-Accuracy of  ship : 79 %
+Accuracy of  ship : 75 %
 Accuracy of truck : 76 %
-End! Total time = 1.584 min
+End! Total time = 55.313 min
+Finished Training. epochs = 300
+Total time = 54.581 min. 	 Epoch time = 0.182 min
+Accuracy of the network on the 10000 test images: 65 %
+Accuracy of plane : 66 %
+Accuracy of   car : 76 %
+Accuracy of  bird : 55 %
+Accuracy of   cat : 48 %
+Accuracy of  deer : 59 %
+Accuracy of   dog : 49 %
+Accuracy of  frog : 68 %
+Accuracy of horse : 74 %
+Accuracy of  ship : 79 %
+Accuracy of truck : 79 %
+End! Total time = 54.724 min
